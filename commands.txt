@@ -1,1 +1,21 @@
-dvc add weather-data
+dvc add weather-data/2006-04-10.csv
+
+
+dvc run --force \
+-n filter \
+-d filter.py -d weather-data/2006-04-10.csv \
+-p filter.value \
+-o output/filter \
+python3 filter.py
+
+dvc run --force \
+-n training \
+-p training.num_rows \
+-d training.py -d weather-data/2006-04-10.csv -d output/filter \
+-o output/training \
+python3 training.py output/filter
+
+
+
+
+dvc dag

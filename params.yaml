@@ -1,4 +1,4 @@
-training:
-  num_rows: 6
 filter:
   value: 20
+training:
+  num_rows: 5
