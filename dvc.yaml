@@ -1,0 +1,9 @@
+stages:
+  training:
+    cmd: python3 training.py
+    params:
+    - training.num_rows
+  filter:
+    cmd: python3 filter.py
+    params:
+    - filter.value

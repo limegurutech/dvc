@@ -1,0 +1,12 @@
+schema: '2.0'
+stages:
+  training:
+    cmd: python3 training.py
+    params:
+      params.yaml:
+        training.num_rows: 6
+  filter:
+    cmd: python3 filter.py
+    params:
+      params.yaml:
+        filter.value: 20
